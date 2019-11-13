@@ -19,11 +19,19 @@ require("channels")
 
 import Vue from 'vue/dist/vue.esm'
 
-// import TurbolinksAdapter from 'vue-turbolinks';
-// Vue.use(TurbolinksAdapter)
+import TurbolinksAdapter from 'vue-turbolinks';
+Vue.use(TurbolinksAdapter)
+
+import VueResource from "vue-resource"
+Vue.use(VueResource);
+
+
 
 import App from '../app.vue'
 Vue.component('app', App)
+
+import Message from '../Message.vue'
+Vue.component('message', Message)
 
 document.addEventListener('turbolinks:load', () => {
   const app = new Vue({
