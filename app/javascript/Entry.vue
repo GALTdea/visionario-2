@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'EntryItem',
+  name: 'Entry',
   props: ["entry"],
 
   methods: {
@@ -19,7 +19,7 @@ export default {
         title: this.title,
       }
       // Send up to parent
-      this.$emit('add-message', newMessage);
+      this.$emit('add-todo', newTodo);
 
       this.title = '';
     }

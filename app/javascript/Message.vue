@@ -1,42 +1,39 @@
-<!-- <template>
-  <div id="message">
-    <AddEntry />
-    <Entries v-bind:entries="entries"  />
-
+<template>
+  <!-- had add an additional parent div to debog  -->
+  <div>
+    <div v-bind:key="entry.id" v-for="entry in message" >
+      <Entry v-bind:entry="entry" />
+       {{ entry.title }}
+    </div>
   </div>
 </template>
 
 <script>
-import Entries from 'Entries';
-import AddEntry from 'AddEntry';
-import VueResource from "vue-resource";
-// need to import the addEntry here
+import Entry from './Entry';
 export default {
   name: 'Message',
+  
   components: {
-    Entries,
-    AddEntry
+    Entry,
   },
 
-  data(){
-    return {
-      entries: [ ]
-    }
-  },
+  props: [ "entry", "message"],
 
   methods: {
-    
+    //   addEntry: function() {
+    //     this.message.entry.push({
+    //       id: null,
+    //       title: "",
+    //       //position: "",a
+    //       // _destroy: null
+    //   })
+    // },
   }
+
 }
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
+
 </style>
 
-<!-- this.team.players_attributes.push({
-            id: null,
-            name: "", --> -->

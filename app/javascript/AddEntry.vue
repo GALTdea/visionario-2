@@ -1,8 +1,14 @@
 <template>
   <div>
-  	<form @submit.prevent="addMessage" >
+  	<form @submit.prevent="addEntry" >
       <input type="text" v-model="title" name="title" placeholder="Add Entry..." >
-      <input type="submit" value="Submit" class="btn"> 
+
+      <button >Add Entry</button>
+
+      
+
+      <!-- <input type="submit" value="Submit" class="btn">  -->
+
     </form>
   </div>
 </template>
@@ -17,15 +23,25 @@ export default {
   }, 
 
   methods: {
-    addEntry() {
+    addEntry: function() {
       const newEntry = {
         title: this.title,
       }
       this.$emit('add-entry', newEntry);
-      this.title = '';
-    }
+      this.title = ""
+    },
+
+    // createEntry() {
+    //   const newEntry = {
+    //     title: this.title,
+    //   }
+    //   this.$emit('create-entry', newEntry);
+    //   this.title = '';
+    // }
+
   }
 }
+
 </script>
 
 <style scoped>
