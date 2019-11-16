@@ -3,7 +3,6 @@
   <div>
     <div v-bind:key="entry.id" v-for="entry in message.entries"  >
       <Entry v-bind:entry="entry" />
-       
     </div>
   </div>
 </template>

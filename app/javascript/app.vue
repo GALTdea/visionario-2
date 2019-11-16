@@ -23,43 +23,43 @@ export default {
 
   },
 
-  // data(){
-  //     return {
-  //       message: {
-  //         entries: [ ]
-  //       }
-  //     }
-
-  // },
-
-  // props: ['message'],
-
   data(){
       return {
         message: {
-          entries: [
-            {
-              id: 1,
-              title: 'Title 1'
-            },
-            {
-              id: 2,
-              title: 'Title 2'
-            },
-            {
-              id: 3,
-              title: 'Title 3'
-            },
-           ]
-        } 
+          entries: [ ]
+        }
       }
+
   },
+
+  // props: ['message'],
+
+  // data(){
+  //     return {
+  //       message: {
+  //         entries: [
+  //           {
+  //             id: 1,
+  //             title: 'Title 1'
+  //           },
+  //           {
+  //             id: 2,
+  //             title: 'Title 2'
+  //           },
+  //           {
+  //             id: 3,
+  //             title: 'Title 3'
+  //           },
+  //          ]
+  //       } 
+  //     }
+  // },
 
   
 
   methods: {
     addEntry: function(newEntry) {
-    const [ title ] = newEntry;
+    const { entry } = newEntry;
     
       this.message.entries.push( newEntry)
       // console.log(message)
