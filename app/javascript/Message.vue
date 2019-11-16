@@ -1,9 +1,9 @@
 <template>
   <!-- had add an additional parent div to debog  -->
   <div>
-    <div v-bind:key="entry.id" v-for="entry in message" >
+    <div v-bind:key="entry.id" v-for="entry in message.entries"  >
       <Entry v-bind:entry="entry" />
-       {{ entry.title }}
+       
     </div>
   </div>
 </template>
@@ -17,9 +17,15 @@ export default {
     Entry,
   },
 
+  
+
   props: [ "entry", "message"],
 
   methods: {
+
+    consoleLog: function(){
+      console.log(message)
+    }
     //   addEntry: function() {
     //     this.message.entry.push({
     //       id: null,

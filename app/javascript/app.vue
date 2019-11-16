@@ -1,7 +1,10 @@
 <template>
-  <div id="message">
+  <div id="app">
     <AddEntry v-on:add-entry="addEntry" />
-    <Message v-bind:entries="message"  />
+    <Message v-bind:message="message"  />
+    <!-- <div v-bind:key="entry.id" v-for="entry in message.entries" >
+       {{ entry.title }}
+    </div> -->
   </div>
 </template>
 
@@ -15,15 +18,40 @@ export default {
 
   components: {
     Message,
-    AddEntry
+    AddEntry,
+    
 
   },
+
+  // data(){
+  //     return {
+  //       message: {
+  //         entries: [ ]
+  //       }
+  //     }
+
+  // },
+
+  // props: ['message'],
 
   data(){
       return {
         message: {
-          entries: [ ]
-        }
+          entries: [
+            {
+              id: 1,
+              title: 'Title 1'
+            },
+            {
+              id: 2,
+              title: 'Title 2'
+            },
+            {
+              id: 3,
+              title: 'Title 3'
+            },
+           ]
+        } 
       }
   },
 
@@ -31,9 +59,10 @@ export default {
 
   methods: {
     addEntry: function(newEntry) {
-    const { title } = newEntry;
-    console.log(newEntry)
+    const [ title ] = newEntry;
+    
       this.message.entries.push( newEntry)
+      // console.log(message)
     }
     
   }

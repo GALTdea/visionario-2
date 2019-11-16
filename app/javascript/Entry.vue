@@ -1,7 +1,6 @@
 <template>
   <div class="entry-item">
-  	<p>
-      <input type="checkbox" >
+  	
      {{entry.title}}
      <button class="del">x</button>
     </p>
