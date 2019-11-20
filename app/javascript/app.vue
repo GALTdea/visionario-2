@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <input type="text" v-model="message.title" />
+    <br>
+    <br>
     <AddEntry v-on:add-entry="addEntry" />
     <Message v-bind:message="message"  />
     <!-- <div v-bind:key="entry.id" v-for="entry in message.entries" >
