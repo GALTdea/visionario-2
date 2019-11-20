@@ -18,7 +18,7 @@ Vue.config.devtools = true
 // const imagePath = (name) => images(name, true)
 
 
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue/dist/vue.esm';
 
 import TurbolinksAdapter from 'vue-turbolinks';
 Vue.use(TurbolinksAdapter)
@@ -35,7 +35,18 @@ import Message from '../Message.vue'
 Vue.component('message', Message)
 
 document.addEventListener('turbolinks:load', () => {
+	Vue.http.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+	
   const app = new Vue({
     el: '[data-behavior="vue"]',
   })
+  console.log()
+
 })
+
+
+
+
+
+
+

@@ -1,12 +1,37 @@
 
 <!-- <message v-bind:message="<%#= @message.to_json %>" ></message> -->
 
-<app v-bind:message="<%= @message.to_json %>" ></app>
+<app v-bind:message="<%= @message.to_json %>" 
+     v-bind:message="<%= @message.to_json %>"
+  ></app>
 
 
-<%#= @message.to_json %>
 
 
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<%= @message.to_json %> <br>
+<%= @message.entries.to_json %>
+<br>
+<br>
 
 
 
