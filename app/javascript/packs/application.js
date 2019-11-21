@@ -28,7 +28,8 @@ Vue.use(TurbolinksAdapter)
 import VueResource from "vue-resource"
 Vue.use(VueResource);
 
-
+import PortalVue from 'portal-vue'
+Vue.use(PortalVue)
 
 import App from '../app.vue'
 Vue.component('app', App)

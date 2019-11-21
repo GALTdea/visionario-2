@@ -1,9 +1,7 @@
 <template>
   <!-- had add an additional parent div to debog  -->
   <div>
-
     <div v-bind:key="entry.id" v-for="entry in message.entries_attributes"  >
-      
       <!-- <Entry v-bind:entry="entry" /> -->
       {{entry.title}}
     </div>
