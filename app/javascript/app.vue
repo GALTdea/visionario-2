@@ -9,7 +9,7 @@
        {{ entry.title }}
     </div> -->
     <br>
-    <button v-on:click="saveMessage">Save Message</button>
+    <button class="btn btn-outline-secondary btn-block" v-on:click="saveMessage">Save Message</button>
   </div>
 </template>
 

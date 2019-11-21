@@ -1,9 +1,9 @@
 <template>
   <div>
   	<form @submit.prevent="addEntry" >
-      <input type="text" v-model="title" name="title" placeholder="Add Entry..." >
-
-      <button >Add Entry</button>
+      <input class="form-control form-control-lg" type="text" v-model="title" name="title" placeholder="Add Entry..." >
+      <br>
+      <button class="btn btn-outline-secondary" >Add Entry</button>
 
       
 
