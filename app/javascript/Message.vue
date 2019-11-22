@@ -3,7 +3,13 @@
   <div>
     <div v-bind:key="entry.id" v-for="entry in message.entries_attributes"  >
       <!-- <Entry v-bind:entry="entry" /> -->
-      {{entry.title}}
+      <ul class="mt-3 ml-1">
+        <li>
+          <span class=" listing">{{entry.title}}</span>
+        </li>
+      </ul>
+      
+      
     </div>
   </div>
 </template>
@@ -40,6 +46,8 @@ export default {
 </script>
 
 <style scoped>
-
+.listing{
+  font-size: 1.5em;
+}
 </style>
 

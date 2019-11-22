@@ -5,11 +5,8 @@
     <br>
     <AddEntry v-on:add-entry="addEntry" />
     <Message v-bind:message="message"  />
-    <!-- <div v-bind:key="entry.id" v-for="entry in message.entries" >
-       {{ entry.title }}
-    </div> -->
     <br>
-    <button class="btn btn-outline-secondary btn-block" v-on:click="saveMessage">Save Message</button>
+    <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveMessage">Save Message </button>
   </div>
 </template>
 
@@ -59,7 +56,9 @@ export default {
 </script>
 
 <style >
-
+.msg-btn{
+  margin-top: 15em;
+}
 </style>
 
 
