@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+  root to: 'sessions#new'
+  
   resources :topics
   resources :posts
   resources :sessions
   resources :entries
   resources :messages
-  root to: 'messages#new'
+  
+
   get 'pages/Home'
   get 'pages/Welcome'
   get 'pages/About'

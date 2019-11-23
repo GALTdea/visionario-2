@@ -10,11 +10,13 @@ class SessionsController < ApplicationController
   # GET /sessions/1
   # GET /sessions/1.json
   def show
+
   end
 
   # GET /sessions/new
   def new
     @session = Session.new
+    @topic = Topic.last
   end
 
   # GET /sessions/1/edit

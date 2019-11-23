@@ -11,6 +11,7 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    @message = Message.find(params[:id])
   end
 
   # GET /messages/new
@@ -29,8 +30,8 @@ class MessagesController < ApplicationController
     # @message.title = 'Title filler'
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render :show, status: :created, location: @message }
+        format.html { redirect_to @message , notice: 'Message was successfully created.' }
+        format.json { render :show, status: :created, location: @message }   
       else
         format.html { render :new }
         format.json { render json: @message.errors, status: :unprocessable_entity }
