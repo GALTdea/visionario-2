@@ -3,11 +3,13 @@
   <div>
     <div v-bind:key="entry.id" v-for="entry in message.entries_attributes"  >
       <!-- <Entry v-bind:entry="entry" /> -->
-      <ul class="mt-3 ml-1">
-        <li>
-          <span class=" listing">{{entry.title}}</span>
-        </li>
-      </ul>
+      <div class="listing-page">
+        <ul class="mt-3 ml-1">
+          <li>
+            <span class="listing">{{entry.title}}</span>
+          </li>
+        </ul>
+      </div>
       
       
     </div>
@@ -46,8 +48,20 @@ export default {
 </script>
 
 <style scoped>
-.listing{
-  font-size: 1.5em;
-}
+  .listing{
+    font-size: 1.5em;
+  }
+
+  /*.listing-page{
+    width: 70%;
+
+    overflow-y: scroll;
+    padding-bottom: 30px;
+
+    background-color: pink;
+
+  }*/
+
+  
 </style>
 
