@@ -5,10 +5,34 @@
   <%= @session.title %>
 </p>
 
-<p>
+
+<div>
+	<% @session.posts.each do |p| %>
+		
+			<span> <%= p.title %> </span> <br>
+		
+	<% end %>
+</div>
+
+
+
+<!-- <p>
   <strong>Completed:</strong>
-  <%= @session.completed %>
+  <%#= @session.completed %>
 </p>
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 <%= link_to 'Edit', edit_session_path(@session) %> |
 <%= link_to 'Back', sessions_path %>
