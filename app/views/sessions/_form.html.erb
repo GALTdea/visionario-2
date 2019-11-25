@@ -1,6 +1,6 @@
 
 <h1> <%= @topic.title %> </h1>
-
+<h1><%= current_user.to_json %></h1>
 <% if current_user %>
   <app 
        v-bind:session="<%= @session.to_json %>" 
@@ -13,16 +13,17 @@
 
 <% else %>
 
-
     <app 
        v-bind:session="<%= @session.to_json %>" 
        v-bind:topic="<%= @topic.to_json %>"
        v-bind:topic="<%= @topic.to_json %>"
-
+       
+      
     ></app>
 
 <% end %>
-
+<!-- use v-bind to pass a temporari user id to app.vue -->
+<!-- v-bind:user='{user: {"id":0,"email":""} }' -->
 
 
 
