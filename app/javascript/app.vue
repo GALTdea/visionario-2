@@ -6,7 +6,6 @@
     <AddPost v-on:add-post="addPost" />
     <Session v-bind:session="session"  />
     <br>
-    {{topic.title}}
     <br>
     <button class="btn form-control btn-outline-secondary btn-block msg-btn" v-on:click="saveSession">Save </button>
   </div>
@@ -25,7 +24,7 @@ export default {
     AddPost,
   },
 
-  props: ['topic'],
+  props: ['topic', 'user'],
 
   // part of Vue instance Lifecycle Hook. https://vuejs.org/v2/guide/instance.html#Instance-Lifecycle-Hooks
   // Created hook runs a code after the vue isntance gets initialized
@@ -41,6 +40,7 @@ export default {
       return {
         session: {
           title: this.topic.title,
+          user_id: this.user.id,
           posts_attributes: [ ]
         }
 

@@ -15,8 +15,9 @@ class SessionsController < ApplicationController
 
   # GET /sessions/new
   def new
-    @session = Session.new
-    @topic = Topic.last
+     @session = Session.new
+    # @session = Session.new(session_params.merge(user: current_user))
+     @topic = Topic.last
   end
 
   # GET /sessions/1/edit
@@ -71,6 +72,6 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:title, :completed, posts_attributes: [:id, :title ])
+      params.require(:session).permit(:title, :completed, :user_id,  posts_attributes: [:id, :title ])
     end
 end

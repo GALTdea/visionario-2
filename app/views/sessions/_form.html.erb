@@ -1,20 +1,27 @@
 
 <h1> <%= @topic.title %> </h1>
 
-<app 
-     v-bind:message="<%= @session.to_json %>" 
-     v-bind:message="<%= @session.to_json %>"
-     v-bind:topic="<%= @topic.to_json %>"
+<% if current_user %>
+  <app 
+       v-bind:session="<%= @session.to_json %>" 
+       v-bind:user="<%= current_user.to_json %>"
+       v-bind:topic="<%= @topic.to_json %>"
+       v-bind:topic="<%= @topic.to_json %>"
 
-  ></app>
-
-
-
-
+    ></app>
 
 
+<% else %>
 
 
+    <app 
+       v-bind:session="<%= @session.to_json %>" 
+       v-bind:topic="<%= @topic.to_json %>"
+       v-bind:topic="<%= @topic.to_json %>"
+
+    ></app>
+
+<% end %>
 
 
 

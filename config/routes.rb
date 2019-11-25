@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
+
   devise_for :users
   root to: 'sessions#new'
-  
+  resources :users
   resources :topics
   resources :posts
   resources :sessions
