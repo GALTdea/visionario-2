@@ -2,7 +2,7 @@
   <!-- had add an additional parent div to debog  -->
   <div>
     <div v-bind:key="post.id" v-for="post in session.posts_attributes"  >
-      <!-- <Entry v-bind:entry="entry" /> -->
+      <Entry v-bind:entry="entry" />
       <div class="listing-page">
         <ul class="mt-3 ml-1">
           <li>
@@ -10,8 +10,6 @@
           </li>
         </ul>
       </div>
-      
-      
     </div>
   </div>
 </template>

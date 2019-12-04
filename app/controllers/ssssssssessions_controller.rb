@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    @session = Session.new(session_params)
+    @session = Session.current_user.new(session_params)
 
     respond_to do |format|
       if @session.save

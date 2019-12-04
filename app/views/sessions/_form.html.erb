@@ -1,29 +1,11 @@
 
-<h1> <%= @topic.title %> </h1>
-<h1><%= current_user.to_json %></h1>
-<% if current_user %>
-  <app 
-       v-bind:session="<%= @session.to_json %>" 
-       v-bind:user="<%= current_user.to_json %>"
-       v-bind:topic="<%= @topic.to_json %>"
-       v-bind:topic="<%= @topic.to_json %>"
-
-    ></app>
+ <!-- <h1> <%#= @topic.title %> </h1> -->
 
 
-<% else %>
 
-    <app 
-       v-bind:session="<%= @session.to_json %>" 
-       v-bind:topic="<%= @topic.to_json %>"
-       v-bind:topic="<%= @topic.to_json %>"
-       
-      
-    ></app>
 
-<% end %>
-<!-- use v-bind to pass a temporari user id to app.vue -->
-<!-- v-bind:user='{user: {"id":0,"email":""} }' -->
+
+ 
 
 
 
@@ -32,56 +14,8 @@
 
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
 
 
 
-<%= form_with(model: session, local: true) do |form| %>
-  <% if session.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(session.errors.count, "error") %> prohibited this session from being saved:</h2>
 
-      <ul>
-        <% session.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :completed %>
-    <%= form.check_box :completed %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

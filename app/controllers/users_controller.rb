@@ -7,6 +7,10 @@ class UsersController < ApplicationController
   	@sessions = current_user.sessions
   end
 
+  def create
+
+  end
+
   def edit
   end
 

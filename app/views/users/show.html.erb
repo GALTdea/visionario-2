@@ -1,15 +1,14 @@
 <% if current_user %>
 	<div class="mb-5">Welcom <%= current_user.email %></div>
 <% end %>
-
 <% if current_user.sessions.any?  %>
 	<%  @sessions.each do |s| %>
 		<span><%#= link_to s.title, topic_path(s.topic) %></span>
 		<span><%= s.title %></span>
 		<% s.posts.each do |p| %>
-				<ol>
-					<l1> <%= link_to p.title, post_path(p) %></l1>
-				</ol>
+				<ul>
+					<li> <%= link_to p.title, post_path(p) %></li>
+				</ul>
 		<% end %>
 		<div class="mt-5"></div>
 	<% end %>

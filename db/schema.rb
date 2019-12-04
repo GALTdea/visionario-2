@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_24_045609) do
+ActiveRecord::Schema.define(version: 2019_11_30_051008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "title"
+    t.boolean "completed"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "entries", force: :cascade do |t|
     t.text "title"
@@ -37,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_11_24_045609) do
     t.bigint "session_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "challenge_id"
+    t.index ["challenge_id"], name: "index_posts_on_challenge_id"
     t.index ["session_id"], name: "index_posts_on_session_id"
   end
 
@@ -45,8 +54,6 @@ ActiveRecord::Schema.define(version: 2019_11_24_045609) do
     t.boolean "completed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_sessions_on_user_id"
   end
 
   create_table "topics", force: :cascade do |t|
@@ -68,6 +75,6 @@ ActiveRecord::Schema.define(version: 2019_11_24_045609) do
   end
 
   add_foreign_key "entries", "messages"
+  add_foreign_key "posts", "challenges"
   add_foreign_key "posts", "sessions"
-  add_foreign_key "sessions", "users"
 end
